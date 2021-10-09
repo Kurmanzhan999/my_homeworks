@@ -2,7 +2,7 @@ import CounterSum from './hw34/CounterSum';
 
 function App() {
   return (
-    <div className="App">
+    <div className="counter">
     <CounterSum/>
     </div>
   );
