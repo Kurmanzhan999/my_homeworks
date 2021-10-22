@@ -1,0 +1,15 @@
+.user{
+    color: brown;
+    font-size: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-top: 50%;
+    
+}
+.date{
+    font-family: sans-serif;
+}
+.comment{
+    font-family: Brush Script MT, Brush Script Std, cursive;
+    font-weight: bold;
+    color: rgb(34, 130, 143);
+}

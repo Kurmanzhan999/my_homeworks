@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import './Form.css'
 function Form(props){
     const [name, setName] = useState('')
     const [text, setText] = useState('')
@@ -12,7 +13,7 @@ function Form(props){
     function DateChangeHandler(e){
         setDate(e.target.value)
     }
-    function Submitchik(e){
+    function SubmitHandler(e){
         e.preventDefault();
         let data = {
             name: name,
@@ -25,17 +26,18 @@ function Form(props){
         setText('')
     }
     return(
-        <div>
-        <form onSubmit={() => {Submitchik()}}>
+        <div className="inputs">
+            <p>Leave Your Comment</p>
+        <form onSubmit= {SubmitHandler}>
             <div>
-                <p>Name</p>
-                <input type='text' onChange={(e) => NameChangeHandler(e)} value={name}/>
-                <p>text</p>
-                <input type='text' onChange={(e) => TextChangeHandler(e)} value={text}/>
-                <p>Date</p>
-                <input type='date' onChange={(e) => DateChangeHandler(e)} value={date}/>
+               <label for="name">User name:</label>
+                <input  id="name" type='text' onChange={ NameChangeHandler} />
+                <p> Write comment </p>
+                <input type='text' onChange={ TextChangeHandler}/>
+                <p> Choose date</p>
+                <input type='date' onChange={ DateChangeHandler}/>
             </div>
-            <button type='submit' onClick={(e) => {Submitchik(e)}}>add</button>
+            <button type='submit' onClick= {SubmitHandler}>Add comment</button>
         </form>
         </div>
     )

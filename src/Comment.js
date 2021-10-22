@@ -1,6 +1,7 @@
 import Form from './Form';
 import React, { useState } from 'react';
-function Comment(props){
+import './Comment.css'
+function Comment(){
     let DATA = []
     const [data, setData] = useState(DATA)
     function addToData(newData){
@@ -17,11 +18,12 @@ function Comment(props){
             data.map(item => {
                 return <div>
                     <div>
-                        <span className='Author'>{item.name}</span>
-                        <span> • </span>
-                        <span className='Time'>{item.date}</span>
+                        <span className='user'>{item.name}</span>
+                        <span className='date'>{item.date}</span>
                     </div>
-                        <p>{item.comment}</p>
+                        <p className="comment">{item.comment}</p>
+                        <hr/>
+
                     </div>
             })
         }
