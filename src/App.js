@@ -1,17 +1,30 @@
-import { useState } from 'react/cjs/react.development';
+import React,{useState} from 'react';
 import './App.css';
-import AddUser from './components/Users/AddUser';
+// import AddUser from './components/Users/AddUser';
 import UserList from './components/Users/UserList';
+import AddUser from './components/Users/AddUser'
 
 function App() {
   const [userList, setUserList]=useState([]);
 
-  const addUserHandler = (uName , uAge) =>{
-    console.log('in app.js');
-   console.log (uName, uAge);
+  const addUserHandler = (uName, uAge) => {
+    // setUserList(
+    //   [
+    //   ...userList,
+    //   {name:uName, age: uAge,id:Math.random().toString()}
+    //    ] );
+  //   console.log('in app.js');
+  //  console.log (uName, uAge);
+  setUserList((prevUserList)=>{
+    return[
+      ...prevUserList,
+      {name:uName, age: uAge,id:Math.random().toString()}
+
+    ]
+  })
   }
   return (
-    <div className="App">
+    <div>
     <AddUser onAddUser = {addUserHandler}/>
     <UserList users={userList}/>
     </div>
