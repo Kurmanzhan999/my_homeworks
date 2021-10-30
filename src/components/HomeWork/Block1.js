@@ -1,16 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
+import Button from '../../UI/Button';
 
-const Block = styled.div `
+export const Block = styled.div `
 display: flex;
 flex-direction: column;
 border:1px solid black;
-heigth:400px;
 width:400px;
+height: 370px;
+background-color: red;
 
 `
 
-const Cards = styled.div `
+/* const Cards = styled.div `
 display: flex;
 heigth:80%;
 width:100%;
@@ -19,18 +21,18 @@ margin:auto;
 `
 const Button = styled.button `
 width:50px;
-margin:auto;
+margin:auto; */
 
-`
+// `
 
 
-export default function Blocks() {
+export default function Block1() {
     
     return (
         
         <div>
-         <Cards>
-            <Block>
+         <div>
+            {/* <Block>
                 <h1>Heading</h1>
                 <p> Lorem </p>
                 
@@ -44,13 +46,15 @@ export default function Blocks() {
 
                 <Button> View more</Button>
             </Block>
-            
-            <Block>
+             */}
+            <div>
                 <h1>Heading</h1>
                 <p> Lorem </p>
-                <Button> View more</Button>
-            </Block>
-       </Cards>
+                 <Button type = 'submit' onClick={()=>{}}>View more</Button>
+
+                {/* <Button> View more</Button> */}
+            </div>
+       </div>
             
             
         </div>
