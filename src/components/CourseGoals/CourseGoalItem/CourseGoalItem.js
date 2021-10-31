@@ -2,6 +2,7 @@ import React from 'react';
 
 import './CourseGoalItem.css';
 
+// etot component otvechaet za udalenie
 const CourseGoalItem = props => {
 console.log(props); // zdes' inputka jazylgan znacheniyalardy chygaryp jatat
 

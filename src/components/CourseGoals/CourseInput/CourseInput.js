@@ -40,20 +40,23 @@ import styles from  './CourseInput.module.css';
 
 // `
 
+//bul brauzerden chygyp jatkan input jana label
+
 const CourseInput = props => {
-  const [enteredValue, setEnteredValue] = useState('');
+  const [enteredValue, setEnteredValue] = useState(''); //enterd value-user ozunun goaldaryn jazat
   const [isValid, setIsValid] = useState(true);
 
   const goalInputChangeHandler = event => {
     if(event.target.value.trim().length>0) {
       setIsValid(true)
     }
-    setEnteredValue(event.target.value);
+    setEnteredValue(event.target.value); // goalInputChangeHandler -set enterdValueni chakyratdagy anan al event.target.value kylyp oshol
+    // user jazgan nerselerdi enterdValuege chygat
   };
 
   const formSubmitHandler = event => {
     event.preventDefault();
-    if(enteredValue.trim().length === 0) {
+    if(enteredValue.trim().length === 0) { //baardyk probelderdi alyp turup razmerin  sanasak 0 go barabar bolso anda isValidke false kylabyz gagy return du jazabyz,posle returna t.e return ishtep ketse astyndagy kod ishtebei kalat. Oshondo user pustoi nerse kosgom dese koshulbait.
         setIsValid(false);
         return;
     }
@@ -71,7 +74,9 @@ const CourseInput = props => {
       </div>
      
       {/* </FormControl> */}
-      <Button type="submit">Add Goal</Button>
+      <Button type="submit">Add Goal</Button>  
+      {/* bul buttondu biz component kylyp achkanbyz,i azyr any v kachestve knopki chakyryp jatbyz */}
+
     </form>
   );
 };

@@ -3,8 +3,9 @@ import React from 'react';
 import CourseGoalItem from '../CourseGoalItem/CourseGoalItem';
 import './CourseGoalList.css';
 
+// etot component otvechaet za render
 const CourseGoalList = props => {
-
+// propston kelgen itemstardy map kylyp chygarat ()
   return (
     <ul className="goal-list">
       {props.items.map(goal => (

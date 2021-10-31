@@ -3,15 +3,15 @@ import React, { useState } from 'react';
 import CourseGoalList from './components/CourseGoals/CourseGoalList/CourseGoalList';
 import CourseInput from './components/CourseGoals/CourseInput/CourseInput';
 import './App.css';
-
-const App = () => {
-  const [courseGoals, setCourseGoals] = useState([ // бул стейттин ичинде 2 object saktait,esli obnovim staranisu to vyhodit eti objects
+ //Appta baaryn chogultup jatabyz ,addGoalHandler,deleteItemHandler degen metotordu koshup
+const App = () => {  
+  const [courseGoals, setCourseGoals] = useState([ // бул стейттин ичинде 2 object saktait,esli obnovim staranisu to vyhodit eti 2 objects
     { text: 'Do all exercises!', id: 'g1' },
     { text: 'Finish the course!', id: 'g2' }
   ]);
   const addGoalHandler = enteredText => {
     setCourseGoals(prevGoals => {
-      const updatedGoals = [...prevGoals];
+      const updatedGoals = [...prevGoals]; //murunku maanilerdi koshup chygaryp jatat
       updatedGoals.unshift({ text: enteredText, id: Math.random().toString() });
       return updatedGoals;
     });
@@ -25,10 +25,10 @@ const App = () => {
   };
 
   let content = (
-    <p style={{ textAlign: 'center' }}>No goals found. Maybe add one?</p>
+    <p style={{ textAlign: 'center' }}>No goals found. Maybe add one?</p>  //bul peremennyi ,goaldardyn baaryn delete kylganda ishteit
   );
 
-  if (courseGoals.length > 0) {
+  if (courseGoals.length > 0) { //je goaldargyn 
     content = (
       <CourseGoalList items={courseGoals} onDeleteItem={deleteItemHandler} />
     );
