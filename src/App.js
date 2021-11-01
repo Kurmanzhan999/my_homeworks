@@ -25,10 +25,10 @@ const App = () => {
   };
 
   let content = (
-    <p style={{ textAlign: 'center' }}>No goals found. Maybe add one?</p>  //bul peremennyi ,goaldardyn baaryn delete kylganda ishteit
+    <p style={{ textAlign: 'center' }}>No goals found. Maybe add one?</p>  //bul peremennyi ,ushundai teksti kamtyit
   );
 
-  if (courseGoals.length > 0) { //je goaldargyn 
+  if (courseGoals.length > 0) { // goaldardyn baar chygat jana jany jazylgandarda,egerde oshol goaldardy bassak delete bolot dagy, baary ochkondon kiin ustudogo contentegi text chygat
     content = (
       <CourseGoalList items={courseGoals} onDeleteItem={deleteItemHandler} />
     );

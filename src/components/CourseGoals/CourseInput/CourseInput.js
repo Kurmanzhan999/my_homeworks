@@ -43,30 +43,33 @@ import styles from  './CourseInput.module.css';
 //bul brauzerden chygyp jatkan input jana label
 
 const CourseInput = props => {
-  const [enteredValue, setEnteredValue] = useState(''); //enterd value-user ozunun goaldaryn jazat
+  const [enteredValue, setEnteredValue] = useState(''); //enterd value-user ozunun goaldaryn jazat 
   const [isValid, setIsValid] = useState(true);
 
   const goalInputChangeHandler = event => {
     if(event.target.value.trim().length>0) {
       setIsValid(true)
     }
-    setEnteredValue(event.target.value); // goalInputChangeHandler -set enterdValueni chakyratdagy anan al event.target.value kylyp oshol
+    setEnteredValue(event.target.value); // goalInputChangeHandler -setEnterdValueni chakyratdagy anan al event.target.value kylyp oshol
     // user jazgan nerselerdi enterdValuege chygat
   };
 
   const formSubmitHandler = event => {
     event.preventDefault();
-    if(enteredValue.trim().length === 0) { //baardyk probelderdi alyp turup razmerin  sanasak 0 go barabar bolso anda isValidke false kylabyz gagy return du jazabyz,posle returna t.e return ishtep ketse astyndagy kod ishtebei kalat. Oshondo user pustoi nerse kosgom dese koshulbait.
+    if(enteredValue.trim().length === 0) { //baardyk probelderdi alyp turup razmerin  sanasak 0 go barabar bolso anda isValidke false 
+      // kylabyz gagy return du jazabyz,posle returna t.e return ishtep ketse astyndagy kod ishtebei kalat. Oshondo user pustoi nerse kosgom dese koshulbait.
         setIsValid(false);
         return;
     }
     props.onAddGoal(enteredValue);
+    console.log(props.onAddGoal);
   };
 
   return (
     <form onSubmit={formSubmitHandler}>
       {/* <FormControl invalid={!isValid}> */}
-      <div className ={`${styles['form-control']} ${!isValid && styles.invalid}`} >
+      <div className ={`${styles['form-control']} ${!isValid && styles.invalid}`} > 
+       {/* bul jerde stilderin kandai bolgondo kandai bolup ishteshi. JSXte stilderdi object katary jazabyz */}
       <label >Course Goal</label>
         <input
         // style={{borderColor:!isValid ? 'red' : 'black' , background: !isValid ? 'salmon' : 'transparent'}}
