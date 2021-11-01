@@ -18,7 +18,7 @@ color: #333;
 `
 
 export const Text2 =styled.p`
- color: #605833; 
+ color: #eee; 
  font-family: Enriqueta; 
  font-size: 16px;
   padding: 10px ;
