@@ -28,9 +28,9 @@ border-radius: 20px;
 
 export default function Block1() {
   function myFunction() {
-    var dots = document.getElementById("dots");
-    var moreText = document.getElementById("more");
-    var btnText = document.getElementById("myBtn");
+    const dots = document.getElementById("dots");
+    const moreText = document.getElementById("more");
+    const btnText = document.getElementById("myBtn");
   
     if (dots.style.display === "none") {
       dots.style.display = "inline";
@@ -43,10 +43,7 @@ export default function Block1() {
     }
   }
  
-  const [showMore, setShowMore]=useState(false);
-  const {text}= data;
-
-    return (
+  return (
       <Wrapper>
             <Block>
                <Title strong>Java</Title>
@@ -57,33 +54,24 @@ export default function Block1() {
                        <span id="more" > New, innovative products and digital services designed for 
                        the future continue to rely on Java, as well. </span>
                </Text>
-               <Button onClick={myFunction} id='myBtn'  backgroundColor="red">
-                 View more</Button>
+               <Button onClick={myFunction} id='myBtn'  backgroundColor="red"> View more</Button>
              </Block> 
 
              <Block> 
                  <Title1>JavaScript</Title1>
-                 <h6> 
-                   {showMore ? text : `${text.substring(0,250)}`}  
                  <Text1>JavaScript is a scripting or programming language that allows you to implement complex features on web pages — every time
                     a web page does more than just sit there and display static information for you to look at 
                     — displaying timely  content updates, interactive maps, animated 2D/3D graphics, scrolling video jukeboxes, etc. 
                  </Text1>
-           
-                 <Button onClick={()=>setShowMore(!showMore)} backgroundColor="orange">Read More</Button>
-                 </h6>
-                
+                 <Button backgroundColor="orange">Read More</Button>
             </Block>
               
             <Block>
-                  <Title2>Kurmanzhan</Title2>
+                  <Title2>PYTOn</Title2>
                   <Text2>Python is an interpreted high-level general-purpose programming language. Its design philosophy
-                    emphasizes code readability with its use of significant indentation.
-                    <span id="dots">...</span>
-                    <span id="more" >Its language constructs as well as its object-oriented approach aim to help programmers write clear, logical code for small and large-scale projects.</span>
+                    emphasizes code readability with its use of significant indentation. Its language constructs as well as its object-oriented approach aim to help programmers write clear, logical code for small and large-scale projects.
                    </Text2>
-                   <Button onClick={myFunction} id='myBtn' backgroundColor="orange">Read More</Button>
-                   {/* <Button onClick={ ()=>{alert('Pyton.com')}} backgroundColor="yellow"> <a></a>View More</Button> */}
+                   <Button onClick={ ()=>{alert('Pyton.com')}} backgroundColor="yellow"> <a></a>Show web site</Button>
              </Block>
        </Wrapper>
     )
