@@ -47,7 +47,8 @@ const CourseInput = props => {
   const [isValid, setIsValid] = useState(true);
 
   const goalInputChangeHandler = event => {
-    if(event.target.value.trim().length>0) {
+    if(event.target.value.trim().length>0) { 
+      // trim()удаляет пробельные символы с начала и конца строки. 
       setIsValid(true)
     }
     setEnteredValue(event.target.value); // goalInputChangeHandler -setEnterdValueni chakyratdagy anan al event.target.value kylyp oshol
@@ -62,7 +63,7 @@ const CourseInput = props => {
         return;
     }
     props.onAddGoal(enteredValue);
-    console.log(props.onAddGoal);
+    // console.log(props.onAddGoal);
   };
 
   return (

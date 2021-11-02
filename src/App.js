@@ -28,16 +28,18 @@ const App = () => {
     <p style={{ textAlign: 'center' }}>No goals found. Maybe add one?</p>  //bul peremennyi ,ushundai teksti kamtyit
   );
 
-  if (courseGoals.length > 0) { // goaldardyn baar chygat jana jany jazylgandarda,egerde oshol goaldardy bassak delete bolot dagy, baary ochkondon kiin ustudogo contentegi text chygat
+  if (courseGoals.length > 0) { // goaldardyn baar chygat jana jany jazylgandarda,egerde oshol goaldardy bassak delete bolot dagy,
+    //  baary ochkondon kiin ustudogг contentegi text chygat
     content = (
-      <CourseGoalList items={courseGoals} onDeleteItem={deleteItemHandler} />
+      <CourseGoalList items={courseGoals} onDeleteItem={deleteItemHandler} /> 
     );
   }
-console.log(deleteItemHandler);
   return (
     <div>
+
       <section id="goal-form">
-        <CourseInput onAddGoal={addGoalHandler} />
+        <CourseInput onAddGoal={addGoalHandler} /> 
+        {/* bul jerde user inputka  jazgan goaldar jana addGoalHandler chakyrylyp jatat al jany koshulgan goaldardy chygarat */}
       </section>
       <section id="goals">
         {content}
@@ -53,6 +55,7 @@ console.log(deleteItemHandler);
 
   );
 };
+
 
 export default App;
 
