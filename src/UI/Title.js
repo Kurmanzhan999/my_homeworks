@@ -4,22 +4,23 @@ export const Title = styled.h1`
  font-family:Georgia,serif;
  line-height:1em;
  margin-top:40px;
- color:#A80C1E;
+ color:yellow;
  display:block;
  font-size:85px;
  font-weight:normal;
  letter-spacing:-3.5px;
 `
 export const Title1 = styled.h1`
- color: orange; 
+ color: red; 
 font-family: "Great Vibes";
-font-size: 50px;
+font-size: 70px;
 line-height: 160px;
-font-weight: normal; 
 margin-bottom: 0px;
 margin-top: 40px;
 text-align: center;
 text-shadow: 0 1px 1px #fff;
+letter-spacing:5px;
+
 `
 export const Title2 = styled.h1`
 color: #CEF0D4;
