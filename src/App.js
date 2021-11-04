@@ -32,7 +32,8 @@ function App() {
   return (
     <div>
     <AddUser onAddUser = {addUserHandler}/>
-    <UserList users={userList}/>
+    
+    <UserList users={userList} onDelete={onDelete}/>
     </div>
   );
 }
