@@ -10,8 +10,8 @@ import classes from './ConfirmModal.module.css'
             <header className={classes.header}>
                 <p className={classes.text} >Are you sure to delete?</p>
                 <footer className={classes.actions}>
-                <Button onClick={props.onDelete}> Confirm</Button>
-                <Button onClick={props.onCancel}> Cansel</Button>
+                <Button onClick={props.onDelete}> Cancel</Button>
+                <Button onClick={props.onCancel}> Confirm</Button>
                 </footer>
             </header>
         </Card>
