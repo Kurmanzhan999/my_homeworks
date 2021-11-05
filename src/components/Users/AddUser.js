@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import Button from '../UI/Button';
 import Card from '../UI/Card';
-import ErroRModel from '../UI/ErrorModel';
+import ErroRModel from '../Modals/ErrorModel';
 import classes from './AddUser.module.css';
 const AddUser = props => {
      const [enteredUsername, setEnteredUsername] = useState('');

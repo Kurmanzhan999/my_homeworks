@@ -23,12 +23,21 @@ function App() {
     ]
   })
   }
+  const onDelete=(goalId)=>{
+    setUserList((prevUsers)=>{
+      const upDateUser= prevUsers.filter((user)=>user.id!==goalId)
+      return upDateUser
+    });
+  }
   return (
     <div>
     <AddUser onAddUser = {addUserHandler}/>
-    <UserList users={userList}/>
+    
+    <UserList users={userList} onDelete={onDelete}/>
     </div>
   );
 }
 
 export default App;
+
+
