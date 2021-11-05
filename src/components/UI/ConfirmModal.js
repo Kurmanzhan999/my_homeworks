@@ -3,16 +3,20 @@ import Button from './Button'
 import Card from './Card'
 import classes from './ConfirmModal.module.css'
 
-export const ConfirmModal = props =>{
+ const ConfirmModal = props =>{
     return(
-        <Card className={classes.modal}>
+        <div className={classes.backdrop} onClick={props.onConfirm}>
+         <Card className={classes.modal}>
             <header className={classes.header}>
-                <p className={classes.text} >Are you sure</p>
-                <footer className={classes.actions}></footer>
+                <p className={classes.text} >Are you sure to delete?</p>
+                <footer className={classes.actions}>
                 <Button onClick={props.onDelete}> Confirm</Button>
                 <Button onClick={props.onCancel}> Cansel</Button>
-
+                </footer>
             </header>
         </Card>
+     </div>
+     
     )
 }
+export default ConfirmModal;

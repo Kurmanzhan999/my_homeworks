@@ -1,8 +1,10 @@
 import React ,{useState}from 'react'
 import Button from '../UI/Button';
-import { ConfirmModal } from '../UI/ConfirmModal';
-import classes from './ConfirimModal.module.css'
+import ConfirmModal from '../UI/ConfirmModal'
+import classes from '../UI/ConfirmModal.module.css'
+
 export const ConfirmDelete= props =>{
+
     const [show, setShow]=useState(false);
 
     const deleteHundler =()=>{
@@ -15,8 +17,8 @@ export const ConfirmDelete= props =>{
     return(
         <li className={classes.list}>
         {props.children}
-        <Button onClick={deleteHundler}>delete</Button>
-        {show ? <ConfirmModal onDelete={onDelete} onCancel = {()=>setShow(false)}/>: ''}
+        <Button onClick={deleteHundler}>Delete</Button>
+        {show ? <ConfirmModal onDelete={onDelete} onConfirm = {()=> setShow(false)}/>: ''}
         </li>
     )
     
