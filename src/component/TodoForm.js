@@ -1,61 +1,42 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { Button, TextField } from "@material-ui/core";
+import React, { useState } from "react";
+import {v4 as uuid} from "uuid";  
+import Card from './Card'
 
-function TodoForm(props) {
-  const [input, setInput] = useState(props.edit ? props.edit.value : '');
-
-  const inputRef = useRef(null);
-
-  useEffect(() => {
-    inputRef.current.focus();
+function TodoForm({ addTodo }) {
+  const [todo, setTodo] = useState({
+    id: "",
+    task: "",
+    completed: false
   });
 
-  const handleChange = e => {
-    setInput(e.target.value);
-  };
+  function handleTaskInputChange(e) {
+    // onchangeke jany input
+    setTodo({ ...todo, task: e.target.value });
+  }
 
-  const handleSubmit = e => {
-    e.preventDefault();
-
-    props.onSubmit({
-      id: Math.floor(Math.random() * 10000),
-      text: input
-    });
-    setInput('');
-  };
+  function handleSubmit(e) {
+    e.preventDefault(); 
+    if (todo.task.trim()) {
+      addTodo({ ...todo, id: uuid.v4 });
+      setTodo({ ...todo, task: "" });
+    }
+  }
 
   return (
-    <form onSubmit={handleSubmit} className='todo-form'>
-      {props.edit ? (
-        <>
-          <input
-            placeholder='Update your item'
-            value={input}
-            onChange={handleChange}
-            name='text'
-            ref={inputRef}
-            className='todo-input edit'
-          />
-          <button onClick={handleSubmit} className='todo-button edit'>
-            Update
-          </button>
-        </>
-      ) : (
-        <div></div>
-        <>
-          <input
-            placeholder='Add a todo'
-            value={input}
-            onChange={handleChange}
-            name='text'
-            className='todo-input'
-            ref={inputRef}
-          />
-          <button onClick={handleSubmit} className='todo-button'>
-            Add todo
-          </button>
-        </>
-      )}
-    </form>
+    //   <Card className={classes.todo-form}>
+     <form className="todo-form" onSubmit={handleSubmit}>
+      <TextField
+        label="Task"
+        type="text"
+        name="task"
+        value={todo.task}
+        onChange={handleTaskInputChange}
+      />
+      <Button type="submit">Submit</Button>
+    </form> 
+    
+  
   );
 }
 
