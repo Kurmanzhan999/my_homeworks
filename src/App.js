@@ -1,9 +1,9 @@
 import Typography from "@material-ui/core/Typography";
 import React, { useEffect, useState } from "react";
-import "./App.css";
-// import TodoForm from "./components/TodoForm";
-import TodoForm from './component/TodoForm'
+import moment from moment;
+import TodoForm from './component/TodoForm';
 import ToDoList from "./component/ToDoList";
+import "./App.css";
 
 const LOCAL_STORAGE_KEY = "react-todo-list-todos";
 
@@ -42,6 +42,7 @@ function App(props) {
   function removeTodo(id) {
     setTodos(todos.filter(todo => todo.id !== id));
   }
+  const deadline = moment(todos.deadline).format('MMM Do YYYY')
 
   return (
     <div className="App">
@@ -52,8 +53,8 @@ function App(props) {
       <ToDoList
         todos={todos}
         removeTodo={removeTodo}
-        toggleComplete={toggleComplete}
-      />
+        toggleComplete={toggleComplete}/>
+       {deadline}
     </div>
   );
 }
