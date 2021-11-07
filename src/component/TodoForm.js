@@ -40,6 +40,7 @@ function TodoForm(props) {
           </button>
         </>
       ) : (
+        <div></div>
         <>
           <input
             placeholder='Add a todo'
