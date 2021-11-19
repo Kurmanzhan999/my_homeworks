@@ -1,0 +1,64 @@
+  
+  .block {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 10px;
+    padding: 10px;
+    background: linear-gradient(
+        90deg,
+        rgb(161, 228, 211) 0%,
+        rgb(6, 29, 29) 100%
+  );
+  }
+  
+  .cards {
+    width: 350px;
+    height: 400px;
+    background: linear-gradient(
+        90deg,
+        rgb(127, 136, 47) 0%,
+        rgb(8, 53, 53) 100%
+      );
+    border: 1px solid black;
+    margin: 15px;
+    cursor: pointer;
+  }
+  .cards :hover{
+      background-color: beige;
+  }
+  .start {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+  }
+
+  .title {
+    width: 200px;
+    color: azure;
+  }
+  
+  .id {
+    display: flex;
+    align-items: flex-end;
+    border: 2px solid black;
+    width: 28px;
+    height: 30px;
+    padding: 5px;
+  }
+  .text {
+    margin-right: 80px;
+    padding: 35px;
+  }
+  
+  .url {
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+  height: 150px;
+  align-items: center;
+  width: 250px;
+  margin:35px; 
+  font-size: 12px;
+}
